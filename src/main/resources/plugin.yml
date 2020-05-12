@@ -1,0 +1,48 @@
+main: net.mythiccraft.dailybonus.DailyBonus
+version: ${project.version}
+prefix: DailyBonus
+name: DailyBonus
+description: A custom daily bonus plugin made for MythicCraft.
+website: mythiccraft.net
+authors: [taylorhughes719, Joshzen]
+author: taylorhughes719
+api-version: '1.15'
+softdepend: [Vault, WorldGuard, mcMMO]
+
+commands:
+  dailybonus:
+    description: The main command for DailyBonus.
+    aliases: [db, dbonus]
+
+
+permissions:
+  dailybonus.*:
+    default: false
+    description: Gives access to all DailyBonus features and commands.
+    children:
+      dailybonus.admin: true
+      dailybonus.user: true
+      dailybonus.help: true
+      dailybonus.open: true
+      dailybonus.recievebonus: true
+      dailybonus.reload: true
+  dailybonus.reload:
+    default: false
+    description: Allows user to reload the plugin.
+  dailybonus.open:
+    default: false
+    description: Allows the player to open the daily bonus menu.
+  dailybonus.recievebonus:
+    default: false
+    description: Allows the player to claim rewards.
+  dailybonus.help:
+    default: false
+    description: Allows player to use the help command.
+  dailybonus.config:
+    default: false
+    description: Allows player to use the in-game configuration system.
+  dailybonus.exempt:
+    default: false
+    description: Prevents the player from claiming rewards.
+
+

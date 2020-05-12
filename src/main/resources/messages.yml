@@ -1,0 +1,14 @@
+# Messages
+#
+# Placeholders:
+# %player% = full player name
+# %displayname% = the player's nickname/display name
+# %time_remaining% = Time remaining before player can claim a bonus
+#
+
+No-Permission:
+  Command: '&cYou do not have permission to perform that command!'
+  Reward: '&cYou do not have the required permission for this reward!'
+
+Player-Offline: '&c&lERROR! &r&cThe specified player is offline.'
+

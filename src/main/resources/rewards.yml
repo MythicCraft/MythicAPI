@@ -1,0 +1,378 @@
+# Actions
+# Rewards File
+#
+# This is the rewards file where you can define what rewards a player
+# will receive for each consecutive day joined. The maximum amount of displayed rewards
+# allowed is 54 and if there is less than the highest reward will be applied to
+# the remaining amount of slots
+#
+# ======================================================
+#
+# Example Reward
+#
+# rewards:
+#   <reward identifier>:
+#     value: 0
+#     default_lore:
+#     - <line of lore>
+#     received_lore:
+#     - <line of lore>
+#     actions:
+#     - <actions>
+#
+# Rewards Index:
+#
+# <rewards number> | The reward identifier, each must be different
+# value: 0 | The amount of consecutive days required to get this reward (0 = lowest)
+# default_lore: - <line of lore> | The reward lore to be displayed on the item
+# received_lore: - <line of lore> | The reward lore to be displayed if the player has recived this reward
+# actions: - <actions> | The actions to be executed once the player reaches this reward
+# permission_actions: - <actions> | The actions if the player has the permission: 'dailybonus.premium'
+#
+# ======================================================
+#
+# Valid Actions:
+#
+# ** Please note that all actions are case-sensitive **
+#
+# [Chance=<percent>] [<action>] - Chance out of 100% that this action will be performed
+# [Delay=<time>] [<action>] - Delays the action to be performed after the delay period in seconds
+# [PlayerCommand] <command> - Executes the command as a player
+# [ConsoleCommand] <command> - Executes the command as the console
+# [OperatorCommand] <command> - Executes the command as the console
+# [Broadcast] <message> - Broadcasts the following message to the server
+# [Message] <message> - Sends the following message to the player
+# [JSONBroadcast] <message> - Sends the following json message to the server
+# [JSONMessage] <message> - Sends the following json to the player
+# [Sound] <sound value> - Plays the sound for the player
+# [VaultGive] <amount> - Adds the amount to the players Vault economy balance
+# [VaultTake] <amount> - Take the amount from the players Vault economy balance
+# [TitleBroadcast] <title> - Displays the title for the server
+# [TitleBroadcast] <title>;<subtitle> - Displays the title & subtitle for the server
+# [Title] <title> - Displays the title for the player
+# [Title] <title>;<subtitle> - Displays the title & subtitle for the player
+# [ActionBarBroadcast] <message> - Displays the message in the actionbar for the server
+# [ActionBar] <message> - Displays the message in the actionbar for the player
+# [Bungee] <server> - Sends the player to the specified bungee server
+#
+# ======================================================
+
+Rewards:
+  # 0 = day 1
+  '0':
+    Value: 0
+    # The actions are what actually happens when the player claims the reward.
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $250!'
+      - '[VaultGive] 250'
+    # The permissions section is for creating groups that receive special/other rewards
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $300!'
+        - '[VaultGive] 300'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $500!'
+        - '[VaultGive] 500'
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $50'
+      Received:
+        Item: EMERALD_BLOCK
+        Amount: 1
+        Glow: true
+        Name: '&aReward #%amount%'
+        Lore:
+          - '&7Keep up the streak to receive'
+          - '&7even better rewards!'
+          - ''
+          - '&a&lCompleted!'
+      Pending:
+        Item: GOLD_BLOCK
+        Amount: 1
+        Glow: true
+        Name: '&eReward #%amount%'
+        Lore:
+          - '&7Come back tomorrow to receive'
+          - '&7this reward!'
+          - ''
+          - '&e&lReward:'
+          - '&f- $250'
+
+  '1':
+    Value: 1
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $500'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $500'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $500!'
+      - '[VaultGive] 500'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $600!'
+        - '[VaultGive] 600'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $750!'
+        - '[VaultGive] 750'
+
+  '2':
+    Value: 2
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $750'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $750'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $750!'
+      - '[VaultGive] 750'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $825!'
+        - '[VaultGive] 825'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $1,000!'
+        - '[VaultGive] 1000'
+
+  '3':
+    Value: 3
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $1,000'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $1,000'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $1,000!'
+      - '[VaultGive] 1000'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $1,100!'
+        - '[VaultGive] 1100'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $1,250!'
+        - '[VaultGive] 1250'
+
+  '4':
+    Value: 4
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $1,500'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $1,500'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $1,500!'
+      - '[VaultGive] 1500'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $1,625!'
+        - '[VaultGive] 1625'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $1,750!'
+        - '[VaultGive] 1750'
+
+  '5':
+    Value: 5
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $2,000'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $2,000'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $2,000!'
+      - '[VaultGive] 2000'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $2,250!'
+        - '[VaultGive] 2250'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $2,500!'
+        - '[VaultGive] 2500'
+
+  '6':
+    Value: 6
+    Default:
+      Item: COAL_BLOCK
+      Amount: 1
+      Glow: false
+      Name: '&cReward #%amount%'
+      Lore:
+        - '&7Come back every day to'
+        - '&7receive even better rewards!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $3,000'
+    Received:
+      Item: EMERALD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&aReward #%amount%'
+      Lore:
+        - '&7Keep up the streak to receive'
+        - '&7even better rewards!'
+        - ''
+        - '&a&lCompleted!'
+    Pending:
+      Item: GOLD_BLOCK
+      Amount: 1
+      Glow: true
+      Name: '&eReward #%amount%'
+      Lore:
+        - '&7Come back tomorrow to receive'
+        - '&7this reward!'
+        - ''
+        - '&e&lReward:'
+        - '&f- $3,000'
+    Actions:
+      - '[Message] &aYou have received a daily bonus of $3,000!'
+      - '[VaultGive] 3000'
+    Permissions:
+      VIP:
+        - '[Message] &aYou have received a daily bonus of $3,500!'
+        - '[VaultGive] 3500'
+      Donator:
+        - '[Message] &aYou have received a daily bonus of $4,000!'
+        - '[VaultGive] 4000'
+

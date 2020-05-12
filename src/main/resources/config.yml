@@ -1,0 +1,10 @@
+# MySQL is recommended for better performance.
+# SQLite is used by default.
+MySQL:
+  Enabled: false
+  Host: localhost
+  Port: 3306
+  Database: my_db
+  Username: root
+  Password: root
+  Max-Connections: 10
